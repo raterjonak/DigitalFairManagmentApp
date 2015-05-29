@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BankApp.DAL;
-using BankApp.Model;
+using DigitalFairApp.DAL;
+using DigitalFairApp.Model;
 
-namespace BankApp.BLL
+namespace DigitalFairApp.BLL
 {
   public  class VisitorManager
     {
@@ -56,5 +56,10 @@ namespace BankApp.BLL
 
 
       }
+
+      public List<Visitor> GetAllVisitorByZoneName(string name)
+      {
+          return visitorGateway.GetVisitorsListByZoneName(name);
+      } 
     }
 }

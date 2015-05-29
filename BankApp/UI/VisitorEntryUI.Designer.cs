@@ -1,4 +1,4 @@
-﻿namespace BankApp
+﻿namespace DigitalFairApp
 {
     partial class VisitorEntryUI
     {

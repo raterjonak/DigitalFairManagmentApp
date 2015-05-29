@@ -1,4 +1,4 @@
-﻿namespace BankApp
+﻿namespace DigitalFairApp
 {
     partial class VisitorDetailsUI
     {
@@ -80,6 +80,7 @@
             this.showButton.TabIndex = 16;
             this.showButton.Text = "Show";
             this.showButton.UseVisualStyleBackColor = false;
+            this.showButton.Click += new System.EventHandler(this.showButton_Click);
             // 
             // label1
             // 
@@ -147,6 +148,7 @@
             this.Controls.Add(this.label2);
             this.Name = "VisitorDetailsUI";
             this.Text = "VisitorDetailsUI";
+            this.Load += new System.EventHandler(this.VisitorDetailsUI_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

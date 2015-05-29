@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BankApp
+namespace DigitalFairApp
 {
     public partial class VisitorNumberUI : Form
     {

@@ -5,12 +5,13 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BankApp.Model;
+using DigitalFairApp.Model;
 
-namespace BankApp.DAL
+namespace DigitalFairApp.DAL
 {
    public class VisitorGateway
     {
+       
        private string connectionString = ConfigurationManager.ConnectionStrings["DigitalFairConString"].ConnectionString;
 
        List<int> SelectedZoneIdList =new List<int>();
@@ -86,6 +87,42 @@ namespace BankApp.DAL
            connection.Close();
            return vid;
 
+       }
+       public List<Visitor> GetVisitorsListByZoneName(string name)
+       {
+           int id =GetZoneIdByName(name);
+
+           List<Visitor> visitors = new List<Visitor>();
+
+           SqlConnection connection = new SqlConnection(connectionString);
+
+
+           string query = "SELECT tbl_Visitor.v_Name,tbl_Visitor.v_Email,tbl_Visitor.v_ContactNo FROM tbl_Visitor JOIN  tbl_Visit ON tbl_Visitor.v_Id=tbl_Visit.visitor_Id  WHERE tbl_Visit.zone_Id='" + id + "'";
+           // string query="SELECT tbl_Visitor.v_Name,tbl_Visitor.v_Email,tbl_Visitor.v_ContactNo FROM tbl_Visitor JOIN  tbl_Visit ON tbl_Visitor.v_Id=tbl_Visit.visitor_Id JOIN tbl_Zone ON tbl_Visit.zone_Id=tbl_Zone.z_Id WHERE tbl_Zone.z_Id='"+id+"'";
+
+           SqlCommand command = new SqlCommand(query, connection);
+
+           connection.Open();
+
+           SqlDataReader reader = command.ExecuteReader();
+
+           while (reader.Read())
+           {
+               Visitor visitor = new Visitor();
+
+               visitor.Name = reader[0].ToString();
+               visitor.Email = reader[1].ToString();
+               visitor.ContactNo = reader[2].ToString();
+               //MessageBox.Show(visitor.Name);
+
+               visitors.Add(visitor);
+
+
+           }
+           reader.Close();
+           connection.Close();
+
+           return visitors;
        }
     }
 }

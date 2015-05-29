@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BankApp.Properties
+namespace DigitalFairApp.Properties
 {
 
 

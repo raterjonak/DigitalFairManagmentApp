@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BankApp.Model
+namespace DigitalFairApp.Model
 {
    public class Zone
     {

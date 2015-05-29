@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BankApp.DAL;
-using BankApp.Model;
+using DigitalFairApp.DAL;
+using DigitalFairApp.Model;
 
-namespace BankApp.BLL
+namespace DigitalFairApp.BLL
 {
     class ZoneManager
     {
@@ -28,6 +28,11 @@ namespace BankApp.BLL
 
         }
 
+        public List<Zone> GetZonesByName(string zoneName)
+        {
+            return aZoneGateway.GetZonesByName(zoneName);
+
+        }
         public List<Zone> GetAllZones()
         {
             return aZoneGateway.GetZones();

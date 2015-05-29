@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BankApp.BLL;
-using BankApp.Model;
+using DigitalFairApp.BLL;
+using DigitalFairApp.Model;
 
-namespace BankApp
+namespace DigitalFairApp
 {
     public partial class VisitorEntryUI : Form
     {
