@@ -113,6 +113,7 @@
             this.exportToExcelButton.TabIndex = 20;
             this.exportToExcelButton.Text = "Export to Excel";
             this.exportToExcelButton.UseVisualStyleBackColor = false;
+            this.exportToExcelButton.Click += new System.EventHandler(this.exportToExcelButton_Click);
             // 
             // totalTextBox
             // 

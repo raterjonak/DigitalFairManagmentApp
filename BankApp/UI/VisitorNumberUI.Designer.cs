@@ -42,6 +42,7 @@
             this.columnHeader1,
             this.columnHeader2});
             this.visitorNumberListView.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.visitorNumberListView.GridLines = true;
             this.visitorNumberListView.Location = new System.Drawing.Point(117, 59);
             this.visitorNumberListView.Name = "visitorNumberListView";
             this.visitorNumberListView.Size = new System.Drawing.Size(424, 201);
@@ -57,7 +58,7 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "NoOfVisitors";
-            this.columnHeader2.Width = 103;
+            this.columnHeader2.Width = 162;
             // 
             // totalTextBox
             // 
@@ -84,12 +85,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(658, 375);
             this.Controls.Add(this.visitorNumberListView);
             this.Controls.Add(this.totalTextBox);
             this.Controls.Add(this.label1);
             this.Name = "VisitorNumberUI";
             this.Text = "VisitorNumberUI";
+            this.Load += new System.EventHandler(this.VisitorNumberUI_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

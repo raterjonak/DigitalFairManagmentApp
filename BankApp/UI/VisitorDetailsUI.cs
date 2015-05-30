@@ -64,5 +64,50 @@ namespace DigitalFairApp
             LoadComboBoxList();
             LoadVisitorListView();
         }
+
+        private void exportToExcelButton_Click(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application xla = new Microsoft.Office.Interop.Excel.Application();
+            xla.Visible = true;
+
+            Microsoft.Office.Interop.Excel.Workbook wb =
+                xla.Workbooks.Add(Microsoft.Office.Interop.Excel.XlSheetType.xlWorksheet);
+
+            Microsoft.Office.Interop.Excel.Worksheet ws = (Microsoft.Office.Interop.Excel.Worksheet)xla.ActiveSheet;
+
+            int i = 1;
+
+            int j = 1;
+            ws.Cells[i, j = 2] = "A Visitor List of digital fair 2015";
+            i = 4;
+            j = 1;
+            ws.Cells[i, j] = "Name";
+            ws.Cells[i, j + 1] = "Email";
+            ws.Cells[i, j + 2] = "Contact No.";
+
+            i = 6;
+            j = 1;
+
+
+
+            foreach (ListViewItem comp in loadVisitorListView.Items)
+            {
+
+                ws.Cells[i, j] = comp.Text.ToString();
+
+                foreach (ListViewItem.ListViewSubItem drv in comp.SubItems)
+                {
+
+                    ws.Cells[i, j] = drv.Text.ToString();
+
+                    j++;
+
+                }
+
+                j = 1;
+
+                i++;
+            }
+        }
     }
 }
